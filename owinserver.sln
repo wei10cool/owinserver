@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "owinserver", "owinserver\owinserver.csproj", "{BFF74AFE-8AD4-4472-BB80-FD00BE141CF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFF74AFE-8AD4-4472-BB80-FD00BE141CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF74AFE-8AD4-4472-BB80-FD00BE141CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF74AFE-8AD4-4472-BB80-FD00BE141CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF74AFE-8AD4-4472-BB80-FD00BE141CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2ACBDFB-5189-46AD-BD73-18F3EF8F1326}
+	EndGlobalSection
+EndGlobal
