@@ -4,7 +4,7 @@ OAuth
 postman  
 https://localhost:44302/token  
 x-www-form-urlencoded  
-email xxx  
+username xxx  
 password xxx  
 grant_type password  
 post!!
