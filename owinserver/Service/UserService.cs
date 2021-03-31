@@ -11,13 +11,13 @@ namespace owinserver.Service
 
         public User GetUserByCredentials(string email, string password)
         {
-            if (email != "email@domain.com" && password != "password")
+            if (email != "email@domain.com" || password != "password")
             {
                 return null;
             }
             User user = new User()
             {
-                Id = "1",
+                Id = "admin",
                 Name = "World",
                 Email = email,
                 Password = password
