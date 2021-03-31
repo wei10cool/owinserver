@@ -1,3 +1,7 @@
+#推廣c#,所以公開
+程式參考youtube，有問題可以問，但我不一定即時回，也不是每天開github  
+key word：iis、oauth2、c#、mvc、api、authorization、token、認證、實作、自建oauth、Implement OAuth 2.0 Authorization, ASP.NET web API、 
+  
 # owinserver
 OAuth  
 參考https://www.youtube.com/watch?v=TsH3BzIPzeU  
