@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using owinserver.Models;
 using System;
 using System.Collections.Generic;
@@ -27,16 +28,19 @@ namespace owinserver.Controllers
         //}
 
         [CustomAuthorize]
-        public TokenStore Get()
+        public TokenStoreUD Get()
         {
             var token = ActionContext.Request.Headers.Authorization.Parameter;
             string data = Authenticate.AuthUser(token);
             if (data != "")
             {
-                var response = JsonConvert.DeserializeObject<TokenStore>(data);
+                //data = data.Replace("\\","");
+                string data2 = data.Replace("\"{\\\"", "{\"").Replace("\\\"}\"", "\"}").Replace("\\", "");
+               // JObject job = JObject.Parse(data);
+                 var response = JsonConvert.DeserializeObject<TokenStoreUD>(data2);
                 return response;
             }
-            return new TokenStore();
+            return new TokenStoreUD();
         }
     }
 }

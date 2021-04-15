@@ -20,13 +20,17 @@ namespace owinserver.provider
                 var password = context.Password;
                 var userService = new UserService();
                 User user = userService.GetUserByCredentials(username, password);
+                UserData userdata = new UserData() { name = user.Id, email = user.Email };
+                var userdataStr =JsonConvert.SerializeObject(userdata);
                 if (user != null)
                 {
                     var claims = new List<Claim>()
                 {
                         new Claim(ClaimTypes.Name, user.Name),
-                        new Claim("UserID", user.Id)
+                        new Claim("UserID", user.Id),
+                        new Claim("user", userdataStr),
                 };
+                   
 
                     ClaimsIdentity oAutIdentity = new ClaimsIdentity(claims, Startup.OAuthOptions.AuthenticationType);
                     context.Validated(new AuthenticationTicket(oAutIdentity, new AuthenticationProperties() { }));
@@ -66,7 +70,8 @@ namespace owinserver.provider
                 citem.Add(c);
             }
             var uid = citem.Find(x => x.claimtype == "UserID").value;
-            TokenStore data = new TokenStore() { token = context.AccessToken, UserId = uid };
+            var userdata = citem.Find(x => x.claimtype == "user").value;
+            TokenStore data = new TokenStore() { token = context.AccessToken, UserId = uid,user= userdata };
             Directory.CreateDirectory("c:\\temp\\");
             File.WriteAllText(datafile, JsonConvert.SerializeObject(data));
             return base.TokenEndpointResponse(context);

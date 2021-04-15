@@ -12,4 +12,9 @@ namespace owinserver.Models
         public string Email { get; set; }
         public string Password { get; set; }
     }
+    public class UserData
+    {
+        public string email { get; set; }
+        public string name { get; set; }
+    }
 }
